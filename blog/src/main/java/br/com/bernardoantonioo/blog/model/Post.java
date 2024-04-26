@@ -2,12 +2,13 @@ package br.com.bernardoantonioo.blog.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Post {
+public class Post implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
@@ -16,6 +17,8 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User author;
 
     public void setTitle(String title) {

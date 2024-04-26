@@ -13,7 +13,6 @@ public class BlogService    {
     private final PostRepository postRepository;
     private final CommentRepository commentRepository;
 
-    @Autowired
     public BlogService(PostRepository postRepository, CommentRepository commentRepository) {
         this.postRepository = postRepository;
         this.commentRepository = commentRepository;
